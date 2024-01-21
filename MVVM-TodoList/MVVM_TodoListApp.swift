@@ -25,6 +25,8 @@ struct MVVM_TodoListApp: App {
             NavigationView {
                 ListView()
             }
+//            fixing ipad display
+            .navigationViewStyle(StackNavigationViewStyle())
 //          All items in navigation view have access to this listview model          when you add it as an environment object
 //          To just provide the view model to the ListView, you pass it in the constructor
             .environmentObject(listViewModel)
