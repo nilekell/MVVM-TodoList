@@ -7,11 +7,27 @@
 
 import SwiftUI
 
+/*
+ MVVM Architecture
+ 
+ Model - data point
+ View - UI
+ ViewModel - manages Models for View
+ */
+
 @main
 struct MVVM_TodoListApp: App {
+    
+    @StateObject var listViewModel: ListViewModel = ListViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                ListView()
+            }
+//          All items in navigation view have access to this listview model          when you add it as an environment object
+//          To just provide the view model to the ListView, you pass it in the constructor
+            .environmentObject(listViewModel)
         }
     }
 }
