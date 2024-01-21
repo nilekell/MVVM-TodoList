@@ -15,6 +15,7 @@
 		22B4F0DF2B5C2D67006ABF52 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4F0DE2B5C2D67006ABF52 /* AddView.swift */; };
 		22B4F0E62B5C3232006ABF52 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4F0E52B5C3232006ABF52 /* ItemModel.swift */; };
 		22B4F0EB2B5D66D3006ABF52 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4F0EA2B5D66D3006ABF52 /* ListViewModel.swift */; };
+		22B4F0EF2B5D82F5006ABF52 /* NoItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4F0EE2B5D82F5006ABF52 /* NoItemsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		22B4F0DE2B5C2D67006ABF52 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		22B4F0E52B5C3232006ABF52 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		22B4F0EA2B5D66D3006ABF52 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		22B4F0EE2B5D82F5006ABF52 /* NoItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoItemsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				22B4F0DA2B5C2935006ABF52 /* ListView.swift */,
 				22B4F0DE2B5C2D67006ABF52 /* AddView.swift */,
 				22B4F0DC2B5C2AB5006ABF52 /* ListRowView.swift */,
+				22B4F0EE2B5D82F5006ABF52 /* NoItemsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 				22B4F0EB2B5D66D3006ABF52 /* ListViewModel.swift in Sources */,
 				22B4F0CA2B5C2870006ABF52 /* MVVM_TodoListApp.swift in Sources */,
 				22B4F0DB2B5C2935006ABF52 /* ListView.swift in Sources */,
+				22B4F0EF2B5D82F5006ABF52 /* NoItemsView.swift in Sources */,
 				22B4F0DD2B5C2AB5006ABF52 /* ListRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

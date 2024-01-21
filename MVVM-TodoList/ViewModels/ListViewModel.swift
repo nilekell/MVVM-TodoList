@@ -12,23 +12,32 @@ import Foundation
  */
 class ListViewModel: ObservableObject {
     
-    @Published var items: [ItemModel] = []
+    @Published var items: [ItemModel] = [] {
+        //        this is a computed property
+        //        this function is called whenever items changes
+        didSet {
+            saveItems()
+        }
+    }
+    
+    let itemsKey: String = "items_list"
     
     init() {
         getItems()
     }
     
     func getItems() {
-        let newItems = [
-            ItemModel(title: "This is the first title!", isCompleted: false),
-            ItemModel(title: "This is the second!", isCompleted: true),
-            ItemModel(title: "Third!", isCompleted: false),
-        ]
+        //        'data' and 'savedItems' are optional (nullable) variables
+        //        using guard allows this variable to be safely unwrapped
+        guard
+            let data = UserDefaults.standard.data(forKey: itemsKey),
+            let savedItems = try? JSONDecoder().decode([ItemModel].self, from: data)
+        else { return }
         
-        items.append(contentsOf: newItems)
+        self.items = savedItems
     }
     
-//    CRUD functions below
+    //    CRUD functions below
     
     func deleteItem(indexSet: IndexSet) {
         items.remove(atOffsets: indexSet)
@@ -57,5 +66,13 @@ class ListViewModel: ObservableObject {
          items[index] = item.updateCompletion()
          }}
          */
+    }
+    
+    func saveItems() {
+        //        if let statement with 'try' is trying to assign a variable and if there are any errors, they can be caught
+        if let encodedData = try? JSONEncoder().encode(items) {
+            //            UserDefaults is key-value storage
+            UserDefaults.standard.set(encodedData, forKey: itemsKey)
+        }
     }
 }

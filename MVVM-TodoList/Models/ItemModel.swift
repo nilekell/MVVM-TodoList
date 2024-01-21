@@ -8,9 +8,11 @@
 import Foundation
 
 // ItemModel conforms to Identifiable Protocol
+// ItemModel conforms to Codable Protocol, enabling ItemModel to be encoded/decoded to data.
 // Allows this model to be used in ForEach loop
 // This is an immutable struct therefore 'let' properties never change
-struct ItemModel: Identifiable {
+
+struct ItemModel: Identifiable, Codable {
     let id: String
     let title: String
     let isCompleted: Bool
